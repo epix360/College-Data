@@ -27,6 +27,34 @@
         height: 100%;
       }
     </style>
+    <script>
+	function doIt() { 
+ var output = $.ajax({
+    url: 'https://jgentes-Crime-Data-v1.p.mashape.com/crime?enddate=9%2F25%2F2015&lat=37.757815&long=-122.5076392&startdate=9%2F19%2F2015', // The URL to the API. You can get this in the API page of the API you intend to consume
+    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
+    data: {
+
+    description: "description",
+    datetime: "datetime",
+    location:"location"
+    
+    }, // Additional parameters here
+    dataType: 'json',
+    success: function(data) {
+    	//
+        //Change data.source to data.something , where something is whichever part of the object you want returned.
+        //To see the whole object you can output it to your browser console using:
+        //console.log(data);
+       	document.getElementById("crime").innerHTML = data.description; 
+        },
+    error: function(err) { alert(err); },
+    beforeSend: function(xhr) {
+    xhr.setRequestHeader("X-Mashape-Authorization", "99JoNhu73zmshRpWUWHcnzOOeQ1Yp1uBqSEjsnNIFd8ggNzW47"); // Enter here your Mashape key
+    }
+});
+}
+
+</script>
   </head>
   <body>
       <div class="container">
@@ -38,6 +66,8 @@
             </div>
             <div id="output"></div>
             <div id="crime"></div>
+              <button onclick="doIt()">Run the request</button>
+  <div id="output">The API request is:</div>
         </form>
         </div>
         </div>

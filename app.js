@@ -1,6 +1,4 @@
-    
-    
-    var crime = [];
+    /*var crime = [];
 
     getCrimeData(crime, function(crimeData) {
         
@@ -8,7 +6,7 @@
         console.log(crimeData);
     });
 
-    function getCrimeData(crimeData, callback) {
+  function getCrimeData(crimeData, callback) {
     var urlBase = 'https://jgentes-Crime-Data-v1.p.mashape.com/crime';
   var url = urlBase + '?enddate=9%2F25%2F2015&lat=37.757815&long=-122.5076392&startdate=9%2F19%2F2015';
 
@@ -20,20 +18,11 @@
 					location: location
                     
 				});
+               
 			});
-    }
+    }*/
 
-    $.ajax({
-    url: 'https://jgentes-Crime-Data-v1.p.mashape.com/crime?enddate=9%2F25%2F2015&lat=37.757815&long=-122.5076392&startdate=9%2F19%2F2015', // The URL to the API. You can get this in the API page of the API you intend to consume
-    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
-    data: {}, // Additional parameters here
-    dataType: 'json',
-    success: function(data) { console.dir((data.source)); },
-    error: function(err) { alert(err); },
-    beforeSend: function(xhr) {
-    xhr.setRequestHeader("X-Mashape-Authorization", "99JoNhu73zmshRpWUWHcnzOOeQ1Yp1uBqSEjsnNIFd8ggNzW47"); // Enter here your Mashape key
-    }
-});
+    
 
 //Creates and sets default view of map
 var map;
@@ -82,7 +71,7 @@ document.getElementById("output").innerHTML = latLng;
     
     //Gets coordinates of zip code entered by user
 function getCoord(zip, callback) {
-    var urlBase = 'http://api.zippopotam.us/us/';
+    var urlBase = 'https://api.zippopotam.us/us/';
     var url = urlBase + zip;
 
     $.get(url, function(data, status) {
@@ -98,7 +87,7 @@ function getCoord(zip, callback) {
     }
 
     function getCityData(zip, callback) {
-    var urlBase = "http://zipfeeder.us/zip?key=thXpN5j-&zips=";
+    var urlBase = "https://zipfeeder.us/zip?key=thXpN5j-&zips=";
     var url = urlBase + zip;
 
     $.get(url, function(data, status) {
