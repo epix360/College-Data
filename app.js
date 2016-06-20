@@ -9,7 +9,7 @@
     });
 
     function getCrimeData(crimeData, callback) {
-    var url = 'https://jgentes-Crime-Data-v1.p.mashape.com/crime';
+    var urlBase = 'https://jgentes-Crime-Data-v1.p.mashape.com/crime';
   var url = urlBase + '?enddate=9%2F25%2F2015&lat=37.757815&long=-122.5076392&startdate=9%2F19%2F2015';
 
 
