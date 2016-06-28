@@ -6,8 +6,8 @@ var getOffset = (function() {
     }
 })();
 
-var urlBase = 'https://epix360.github.io/College-Data/get?u=https://inventory.data.gov/api/action/datastore_search?offset='
-var resourceID = '&resource_id=38625c3d-5388-4c16-a30f-d105432553a4';
+var urlBase = 'http://whateverorigin.org/get?url=https://inventory.data.gov/api/action/datastore_search?offset='
+var resourceID = '&resource_id=38625c3d-5388-4c16-a30f-d105432553a4&callback=?';
 
 var urlArray = [];
 for (u = 0; u <= 7769; u++) {
