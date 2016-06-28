@@ -6,7 +6,7 @@ var getOffset = (function() {
     }
 })();
 
-var urlBase = 'http://whateverorigin.org/get?url=https://inventory.data.gov/api/action/datastore_search?offset='
+var urlBase = 'https://whateverorigin.org/get?url=https://inventory.data.gov/api/action/datastore_search?offset='
 var resourceID = '&resource_id=38625c3d-5388-4c16-a30f-d105432553a4&callback=?';
 
 var urlArray = [];
