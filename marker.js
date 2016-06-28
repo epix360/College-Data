@@ -63,15 +63,14 @@ function addMarker(LatLng) {
             path: google.maps.SymbolPath.CIRCLE,
             scale: 4,
             strokeWeight: 1,
-            fillOpacity:0.9,
+            fillOpacity:1,
             fillColor: 'red'
           },
         map: map
     });
     var contentString = '<h2>' + name + '</h2>' +
         '<p>' + address + '<br>' + city + ',' + ' ' + state + ' ' + zip + '</p>' +
-        '<p>' + phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4) + '</p>' + 
-        '<p><a href="http://' + website + '" target="_blank">' + website + '</a></p>';
+        '<p>' + phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4) + '</p>' + '<p><a href="http://' + website + '" target="_blank">' + website + '</a></p>';
 
 
     marker.addListener('click', function() {
