@@ -1,11 +1,15 @@
+$(window).load(function(){
+        $('#instModal').modal('show');
+    });
+
 //Creates and sets default view of map
 var map;
 var coord;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: new google.maps.LatLng(33.912149, -98.493440),
-        zoom:4,
+        center: new google.maps.LatLng(38.1, -97.156168),
+        zoom:5,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     latLng = map.center;

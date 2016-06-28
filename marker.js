@@ -6,8 +6,8 @@ var getOffset = (function() {
     }
 })();
 
-var urlBase = 'https://whateverorigin.org/get?url=https://inventory.data.gov/api/action/datastore_search?offset='
-var resourceID = '&resource_id=38625c3d-5388-4c16-a30f-d105432553a4&callback=?';
+var urlBase = 'https://inventory.data.gov/api/action/datastore_search?offset='
+var resourceID = '&resource_id=38625c3d-5388-4c16-a30f-d105432553a4';
 
 var urlArray = [];
 for (u = 0; u <= 7769; u++) {
@@ -37,6 +37,8 @@ for (r = 0; r <= 7769; r+=100) {
                 state = d.records[i].STABBR;
                 zip = d.records[i].ZIP;
                 website = d.records[i].WEBADDR;
+                phone = d.records[i].GENTELE;
+                apply = d.records[i].APPLURL;
 
                 //Excludes smaller institutions
                 size = Number(d.records[i].INSTSIZE);
@@ -61,13 +63,14 @@ function addMarker(LatLng) {
             path: google.maps.SymbolPath.CIRCLE,
             scale: 4,
             strokeWeight: 1,
-            fillOpacity:1,
+            fillOpacity:0.9,
             fillColor: 'red'
           },
         map: map
     });
     var contentString = '<h2>' + name + '</h2>' +
         '<p>' + address + '<br>' + city + ',' + ' ' + state + ' ' + zip + '</p>' +
+        '<p>' + phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4) + '</p>' + 
         '<p><a href="http://' + website + '" target="_blank">' + website + '</a></p>';
 
 

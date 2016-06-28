@@ -12,6 +12,11 @@
   <!--<link rel="stylesheet" href="style.css">-->
   <!-- Font Awesome Glyphicons -->
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+  <!--Animate.css-->
+  <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
   <link rel="stylesheet" href="style.css">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,14 +27,34 @@
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container">
+      <div class="row">
+        <div class="modal fade" id="instModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+              <h2>Time to get schooled!</h2>
+            </div>
+      <div class="modal-body">Dust off your backpack and find a school near you.
+        Each dot below represents a college or university. Click on the dot for info about 
+        that institution. Use the zip code field to go to a specific area.
+      </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Got it</button>
+      </div>
+      </div>
+    </div>
+    </div>
+      </div>
+    </div>
+  <div class="container">
     <div class="row">
       <div class="col-sm-8">
-        <h1>Schools of Higher Learning in the United States</h1>
+        <h1 class="animated slideInDown">Schools of Higher Learning in the US</h1>
       </div>
 
       <div class="col-sm-4">
-        <form class="form-horizontal">
+        <form class="animated slideInDown form-horizontal">
           <div class="form-group">
             <input id="zipcode" type="text" value="" pattern="(\d{5}([\-]\d{4})?)" placeholder="Zip Code">
             <button id="zipBtn" type="button" class="btn btn-default">Submit</button>
@@ -40,31 +65,34 @@
       </div>
 
     </div>
+    
   </div>
-  <div id="map">
-
-  </div>
-  <div class="container-fluid">
+  <div id="map"></div>
+  <div class="container">
     <div class="row">
       <footer>
         <ul class="list-inline">
-        <li>&copy; Eric Porter 2016</li>
+        <li>Source: data.gov</li>
+        <li> | </li>
+        <li>Site by Eric Porter</li>
+        <li> | </li>
         <li><a href="http://epix360.github.io/resume/">Résumé</a></li>
         </ul>
       </footer>
     </div>
   </div>
-  <!--<script src='http://requirejs.org/docs/release/2.2.0/minified/require.js'></script>-->
+
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
   <!--Angular-->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <!--Google Maps-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD78vGGPtiKg4ZoEtJitXwqNZM9rwkWKvE&callback=initMap" async defer></script>
-  <script src="marker.js"></script>
-  <script src="app.js"></script>
 
+  <script src="app.js"></script>
+  <script src="marker.js"></script>
 </body>
 
 </html>

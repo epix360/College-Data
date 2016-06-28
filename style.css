@@ -4,5 +4,22 @@ html, body {
         padding: 0;
       }
       #map {
-        height: 75%;
+        height: 86%;
       }
+
+h1 {
+  font-family: 'Special Elite', sans-serif;
+}
+
+footer {
+  line-height:40px;
+}
+
+form {
+  margin-top:15px;
+  line-height:30px;
+}
+
+#instModal {
+  top:15%;
+}
