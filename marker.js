@@ -6,7 +6,7 @@ var getOffset = (function() {
     }
 })();
 
-var urlBase = 'https://inventory.data.gov/?u=https://inventory.data.gov/api/action/datastore_search?offset='
+var urlBase = 'https://epix360.github.io/College-Data/?u=https://inventory.data.gov/api/action/datastore_search?offset='
 var resourceID = '&resource_id=38625c3d-5388-4c16-a30f-d105432553a4';
 
 var urlArray = [];
