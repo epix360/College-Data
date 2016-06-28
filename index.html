@@ -1,89 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title></title>
-<!-- Bootstrap -->
-<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'>
-<!--<link rel="stylesheet" href="style.css">-->
-<!-- Font Awesome Glyphicons -->
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title></title>
+  <!-- Bootstrap -->
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'>
+  <!--<link rel="stylesheet" href="style.css">-->
+  <!-- Font Awesome Glyphicons -->
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="style.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
 <script src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'></script>
 <script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script>
 <![endif]-->
-   <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-    <script>
-	function doIt() { 
- var output = $.ajax({
-    url: 'https://jgentes-Crime-Data-v1.p.mashape.com/crime?enddate=9%2F25%2F2015&lat=37.757815&long=-122.5076392&startdate=9%2F19%2F2015', // The URL to the API. You can get this in the API page of the API you intend to consume
-    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
-    data: {
+</head>
 
-    description: "description",
-    datetime: "datetime",
-    location:"location"
-    
-    }, // Additional parameters here
-    dataType: 'json',
-    success: function(data) {
-    	//
-        //Change data.source to data.something , where something is whichever part of the object you want returned.
-        //To see the whole object you can output it to your browser console using:
-        //console.log(data);
-       	document.getElementById("crime").innerHTML = data.description; 
-        },
-    error: function(err) { alert(err); },
-    beforeSend: function(xhr) {
-    xhr.setRequestHeader("X-Mashape-Authorization", "99JoNhu73zmshRpWUWHcnzOOeQ1Yp1uBqSEjsnNIFd8ggNzW47"); // Enter here your Mashape key
-    }
-});
-}
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1>Schools of Higher Learning in the United States</h1>
+      </div>
 
-</script>
-  </head>
-  <body>
-      <div class="container">
-          <div class="row">
-      <form class="form-horizontal">
-			<div class="form-group">
-            <input id="zipcode" type="text" value = "" pattern="(\d{5}([\-]\d{4})?)" placeholder="Zip Code">
+      <div class="col-sm-4">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <input id="zipcode" type="text" value="" pattern="(\d{5}([\-]\d{4})?)" placeholder="Zip Code">
             <button id="zipBtn" type="button" class="btn btn-default">Submit</button>
-            </div>
-            <div id="output"></div>
-            <div id="crime"></div>
-              <button onclick="doIt()">Run the request</button>
-  <div id="output">The API request is:</div>
+          </div>
+          <div id="result"></div>
+          <div id="output"></div>
         </form>
-        </div>
-        </div>
-    <div id="map">
-        
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-<!--Angular-->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD78vGGPtiKg4ZoEtJitXwqNZM9rwkWKvE&callback=initMap"
-    async defer></script>
-    
-    <script src="app.js"></script>
-  </body>
-</html>
+      </div>
 
+    </div>
+  </div>
+  <div id="map">
+
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <footer>
+        <ul class="list-inline">
+        <li>&copy; Eric Porter 2016</li>
+        <li><a href="http://epix360.github.io/resume/">Résumé</a></li>
+        </ul>
+      </footer>
+    </div>
+  </div>
+  <!--<script src='http://requirejs.org/docs/release/2.2.0/minified/require.js'></script>-->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+  <!--Angular-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD78vGGPtiKg4ZoEtJitXwqNZM9rwkWKvE&callback=initMap" async defer></script>
+  <script src="marker.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
