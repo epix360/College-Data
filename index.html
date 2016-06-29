@@ -35,9 +35,9 @@
             <div class="modal-header">
               <h2>Time to get schooled!</h2>
             </div>
-      <div class="modal-body">Dust off your backpack and find a school near you.
+      <div class="modal-body">Dust off your backpack and get to class.
         Each dot below represents a college or university. Click on the dot for info about 
-        that institution. Use the zip code field to go to a specific area.
+        that institution. Use the zip code field above to go to a specific area.
       </div>
        <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Got it</button>
@@ -47,21 +47,27 @@
     </div>
       </div>
     </div>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-6">
         <h1 class="animated slideInDown">Schools of Higher Learning in the US</h1>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-6">
+        <div class="col-sm-6">
         <form class="animated slideInDown form-horizontal">
           <div class="form-group">
             <input id="zipcode" type="text" value="" pattern="(\d{5}([\-]\d{4})?)" placeholder="Zip Code">
             <button id="zipBtn" type="button" class="btn btn-default">Submit</button>
           </div>
           <div id="result"></div>
-          <div id="output"></div>
         </form>
+        </div>
+        <div class="col-sm-6">
+          <div>
+            <h3>Add favorites here</h3>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -90,7 +96,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <!--Google Maps-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD78vGGPtiKg4ZoEtJitXwqNZM9rwkWKvE&callback=initMap" async defer></script>
-
+  
   <script src="app.js"></script>
   <script src="marker.js"></script>
 </body>

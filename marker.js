@@ -1,5 +1,4 @@
 var offset = [];
-//offset 982 includes Idaho schools
 var getOffset = (function() {
     for (s = 0; s <= 7769; s++) {
         offset.push(s);
@@ -42,7 +41,7 @@ for (r = 0; r <= 7769; r+=100) {
 
                 //Excludes smaller institutions
                 size = Number(d.records[i].INSTSIZE);
-                if (size <= 2) {
+                if (size <= 1) {
                     continue
                 };
 
@@ -68,9 +67,11 @@ function addMarker(LatLng) {
           },
         map: map
     });
-    var contentString = '<h2>' + name + '</h2>' +
+    var contentString = '<div class="info-window"><h2>' + name + '</h2>' +
         '<p>' + address + '<br>' + city + ',' + ' ' + state + ' ' + zip + '</p>' +
-        '<p>' + phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4) + '</p>' + '<p><a href="http://' + website + '" target="_blank">' + website + '</a></p>';
+        '<p>' + phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4) + 
+        '</p>' + '<p><a href="http://' + website + '" target="_blank">' + website + '</a></p>' +
+                '<button class="favs btn btn-success" onclick="myFunction()"><i class="fa fa-plus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Add to Favorites</button></div>';
 
 
     marker.addListener('click', function() {
