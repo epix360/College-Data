@@ -16,8 +16,7 @@ for (u = 0; u <= 7769; u++) {
 
 var url;
 for (r = 0; r <= 7769; r+=100) {
-    url = urlArray[r];
-    
+    url = urlArray[r]; 
 
     var getSchools = $.getJSON(url, function(data) {
 
@@ -41,12 +40,12 @@ for (r = 0; r <= 7769; r+=100) {
 
                 //Excludes smaller institutions
                 size = Number(d.records[i].INSTSIZE);
-                if (size <= 1) {
+                if (size <= 4) {
                     continue
                 };
 
-                console.log(name);
-
+                //console.log(name);
+                
                 ColMarker();
             }
         });
@@ -67,12 +66,13 @@ function addMarker(LatLng) {
           },
         map: map
     });
-    var contentString = '<div class="info-window"><h2>' + name + '</h2>' +
+    var contentString;
+
+    contentString = '<div class="info-window"><div class="info-template"><h2>' + name + '</h2>' +
         '<p>' + address + '<br>' + city + ',' + ' ' + state + ' ' + zip + '</p>' +
         '<p>' + phone.substr(0, 3) + '-' + phone.substr(3, 3) + '-' + phone.substr(6,4) + 
-        '</p>' + '<p><a href="http://' + website + '" target="_blank">' + website + '</a></p>' +
-                '<button class="favs btn btn-success" onclick="myFunction()"><i class="fa fa-plus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Add to Favorites</button></div>';
-
+        '</p>' + '<p><a href="http://' + website + '" target="_blank">' + website + '</a></p></div>' +
+        '<button type="button" class="favs btn btn-success" onclick="addFavorite()"><i class="fa fa-plus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Add to Favorites</button></div>';
 
     marker.addListener('click', function() {
         if (infowindow) infowindow.close();
@@ -87,3 +87,24 @@ function addMarker(LatLng) {
 function ColMarker() {
     addMarker(map);
 }
+
+var d = new Date();
+var n = d.getTime();
+console.log(n); 
+
+var addFavorite = (function() {
+        $('.favs-list').append(infowindow.content);
+        $('.favs').replaceWith('<button type="button" class="rmv-favs btn btn-danger" onclick="removeFavorite()"><i class="fa fa-minus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Remove from Favorites</button></div>');
+        $('.info-window').attr('id', d.getTime());
+    });
+
+var removeFavorite = (function() {
+    $('.favs-list .info-window').parent().parent('div').remove();
+    $('.rmv-favs').replaceWith('<button type="button" class="favs btn btn-success" onclick="addFavorite()"><i class="fa fa-plus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Add to Favorites</button></div>');
+});
+
+
+
+
+
+

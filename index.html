@@ -29,7 +29,7 @@
 <body>
   <div class="container">
       <div class="row">
-        <div class="modal fade" id="instModal">
+        <div class="modal fade animated swing" id="instModal">
           <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -65,13 +65,32 @@
         </div>
         <div class="col-sm-6">
           <div>
-            <h3>Add favorites here</h3>
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-default favs-btn" data-toggle="modal" data-target="#favsModal">
+  Favorites
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="favsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Saved favorites</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+        <div class="favs-list">
+        </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
-
     </div>
-    
   </div>
   <div id="map"></div>
   <div class="container">
@@ -87,7 +106,6 @@
       </footer>
     </div>
   </div>
-
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -96,7 +114,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <!--Google Maps-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD78vGGPtiKg4ZoEtJitXwqNZM9rwkWKvE&callback=initMap" async defer></script>
-  
+  <script src="favs.js"></script>
   <script src="app.js"></script>
   <script src="marker.js"></script>
 </body>

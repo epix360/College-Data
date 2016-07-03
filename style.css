@@ -36,6 +36,20 @@ form {
   margin-left:25px;
 }
 
+.rmv-favs {
+margin-top:-60px;
+  float:right;
+  margin-left:25px;
+}
+
+.hidden {
+  display:hidden;
+}
+
+.favs-btn {
+  margin-top:15px;
+}
+
 .info-window {
   min-width:350px;
 }
