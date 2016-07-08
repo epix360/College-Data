@@ -1,3 +1,28 @@
+/*var getStore = function() {
+for(var i in window.localStorage){
+   val = localStorage.getItem(i); 
+   //value = val.split(","); //splitting string inside array to get name
+   //name[i] = value[1]; // getting name from split string
+   $('#favs-list').html(val);
+}
+}*/
+
+function getStore() {
+
+    var storeValues = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+        storeValues.push( localStorage.getItem(keys[i]) );
+    }
+$('#favs-list').html(storeValues);  
+}
+
+var storageLength = localStorage.length;
+console.log(storageLength);
+getStore();
+
 var offset = [];
 var getOffset = (function() {
     for (s = 0; s <= 7769; s++) {
@@ -81,30 +106,36 @@ function addMarker(LatLng) {
         });
         infowindow.open(map, marker);
         infowindow.setPosition(this.position);
+
+        d = new Date();
+        n = d.getTime();
+
     });
 }
+var d;
+var n;
+
 // Testing the addMarker function
 function ColMarker() {
     addMarker(map);
 }
 
-var d = new Date();
-var n = d.getTime();
-console.log(n); 
-
 var addFavorite = (function() {
-        $('.favs-list').append(infowindow.content);
-        $('.favs').replaceWith('<button type="button" class="rmv-favs btn btn-danger" onclick="removeFavorite()"><i class="fa fa-minus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Remove from Favorites</button></div>');
-        $('.info-window').attr('id', d.getTime());
+    var infWinInst = '<li id="' + n + '">' + infowindow.content + '</li>';
+        $('#favs-list').append(infWinInst);
+        var p = n - 1;
+        $('#favs-list .favs').replaceWith('<button id="' + p + '" type="button" class="rmv-favs btn btn-danger" onclick="removeFavorite()"><i class="fa fa-minus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Remove from Favorites</button></div>');
+        $('#map .favs').replaceWith('<button type="button" class="favs btn btn-success">Added</button></div>');
+        $('#map .favs').fadeOut(1500);
+        localStorage.setItem('#' + n, infWinInst);
     });
 
 var removeFavorite = (function() {
-    $('.favs-list .info-window').parent().parent('div').remove();
-    $('.rmv-favs').replaceWith('<button type="button" class="favs btn btn-success" onclick="addFavorite()"><i class="fa fa-plus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Add to Favorites</button></div>');
+    $("#favs-list li, .favs").click(function(evt){ 
+   var targetElement = evt.target;
+   localStorage.removeItem('#' + this.id);
+   $(this).remove(); 
 });
-
-
-
-
-
+$('#map .favs').replaceWith('<button type="button" class="favs btn btn-success" onclick="addFavorite()"><i class="fa fa-plus-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Add to Favorites</button></div>');   
+});
 
