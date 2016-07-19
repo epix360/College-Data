@@ -16,7 +16,8 @@
   <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
   <!--Animate.css-->
-  <link rel="stylesheet" href="https://s.mlcdn.co/animate.css">
+  <!--<link rel="stylesheet" href="https://s.mlcdn.co/animate.css">-->
+  <link rel="stylesheet" href="animate.css">
   <link rel="stylesheet" href="style.css">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,22 +61,22 @@
     </div>
   <div class="container-fluid">
     <div class="row animated slideInDown">
-      <div class="col-sm-7">
-        <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;Mapiversity&nbsp;&nbsp;<small>Get Schooled</small></h1>
+      <div class="col-sm-6 col-sm-offset-1">
+        <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;Mapiversity&nbsp;&nbsp;<br class="mobile-only"><small>Get Schooled</small></h1>
       </div>
 
-      <div class="col-sm-5">
-        <div class="col-sm-6">
+      <div class="col-sm-5 header-stuff">
+        <div class="col-xs-9">
         <form class="form-horizontal">
           <div class="form-group">
-            <input id="zipcode" type="text" value="" pattern="(\d{5}([\-]\d{4})?)" placeholder="Zip Code">
-            <button id="zipBtn" type="button" class="btn btn-default">Submit</button>
+            <input class="col-xs-7 col-xs-pull-1 col-xs-offset-1" id="zipcode" type="text" value="" pattern="(\d{5}([\-]\d{4})?)" placeholder="Zip Code">
+            <button id="zipBtn" type="button" class="col-xs-3 col-xs-pull-1 btn btn-default">Submit</button>
           </div>
           <div id="result"></div>
         </form>
         </div>
-        <div class="col-sm-6">
-          <div>
+        <div class="col-xs-3 col-xs-pull-1">
+
             <!-- Button trigger modal -->
 <button type="button" class="btn btn-success favs-btn" data-toggle="modal" data-target="#favsModal">
   Favorites
@@ -102,7 +103,7 @@
     </div>
   </div>
 </div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -129,7 +130,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <!--Google Maps-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD78vGGPtiKg4ZoEtJitXwqNZM9rwkWKvE&callback=initMap" async defer></script>
-  <script src="favs.js"></script>
   <script src="app.js"></script>
   <script src="marker.js"></script>
 </body>

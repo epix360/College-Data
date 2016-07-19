@@ -53,3 +53,24 @@ margin-top:-60px;
 .info-window {
   min-width:350px;
 }
+
+.mobile-only {
+  display:none;
+}
+
+@media screen and (max-width:768px) {
+  .mobile-only {
+    display:initial;
+  }
+
+  h1 small {
+  position:absolute;
+  left:72px;
+  padding-top:5px;
+  padding-bottom:10px;
+}
+
+.header-stuff {
+  margin-top:20px;
+}
+}
