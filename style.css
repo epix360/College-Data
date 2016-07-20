@@ -7,6 +7,14 @@ html, body {
         height: 86%;
       }
 
+      .fa-graduation-cap {
+        color:#009688;
+      }
+
+      .btn-success {
+        background-color:#009688;
+      }
+
 h1, h2 {
   font-family: 'Special Elite', sans-serif;
 }
