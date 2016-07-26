@@ -15,7 +15,7 @@ html, body {
         background-color:#009688;
       }
 
-      btn-success:hover {
+      .btn-success:hover {
         background-color:white;
         color:black;
       }
