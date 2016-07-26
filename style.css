@@ -15,6 +15,11 @@ html, body {
         background-color:#009688;
       }
 
+      btn-success:hover {
+        background-color:white;
+        color:black;
+      }
+
 h1, h2 {
   font-family: 'Special Elite', sans-serif;
 }
