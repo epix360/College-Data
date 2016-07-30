@@ -1,0 +1,11 @@
+# Created by https://www.gitignore.io/api/visualstudiocode
+
+### VisualStudioCode ###
+.vscode
+
+directory.csv
+directory.js
+directory.json
+directory-dictionary.xlsx
+tuition.csv
+tuition.json
