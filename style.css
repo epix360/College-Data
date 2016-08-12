@@ -33,6 +33,12 @@ body {
   text-decoration:none;
 }
 
+.foot {
+  background-color: rgba(244, 244, 244, 0.9);
+  line-height:25px;
+  text-align:center;
+}
+
 .ticker {
   background-color: rgba(244, 244, 244, 0.9);
   border-radius: 4px;
@@ -69,6 +75,10 @@ figcaption {
                  0px 8px 13px rgba(0,0,0,0.1),
                  0px 18px 23px rgba(0,0,0,0.1);
 }
+
+.centered {
+text-align:center;
+}
 hr {
     width: 400px;
     border-top: 1px solid #f8f8f8;
@@ -96,10 +106,6 @@ hr {
 h1,
 h2 {
   font-family: 'Special Elite', sans-serif;
-}
-
-footer {
-  line-height: 40px;
 }
 
 form {
